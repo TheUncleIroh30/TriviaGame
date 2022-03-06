@@ -1,0 +1,766 @@
+using static System.Console;
+
+int score = 0;
+
+string endgame = @"
+░██████╗░░█████╗░███╗░░░███╗███████╗  ░█████╗░██╗░░░██╗███████╗██████╗░
+██╔════╝░██╔══██╗████╗░████║██╔════╝  ██╔══██╗██║░░░██║██╔════╝██╔══██╗
+██║░░██╗░███████║██╔████╔██║█████╗░░  ██║░░██║╚██╗░██╔╝█████╗░░██████╔╝
+██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░  ██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗
+╚██████╔╝██║░░██║██║░╚═╝░██║███████╗  ╚█████╔╝░░╚██╔╝░░███████╗██║░░██║
+░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝";
+
+string gametitleart = @"────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─██████████████─████████████───██████──██████─██████████████───██████──██████─██████████─██████████████████─
+─██░░░░░░░░░░██─██░░░░░░░░████─██░░██──██░░██─██░░░░░░░░░░██───██░░██──██░░██─██░░░░░░██─██░░░░░░░░░░░░░░██─
+─██░░██████████─██░░████░░░░██─██░░██──██░░██─██░░██████░░██───██░░██──██░░██─████░░████─████████████░░░░██─
+─██░░██─────────██░░██──██░░██─██░░██──██░░██─██░░██──██░░██───██░░██──██░░██───██░░██───────────████░░████─
+─██░░██████████─██░░██──██░░██─██░░██──██░░██─██░░██──██░░██───██░░██──██░░██───██░░██─────────████░░████───
+─██░░░░░░░░░░██─██░░██──██░░██─██░░██──██░░██─██░░██──██░░██───██░░██──██░░██───██░░██───────████░░████─────
+─██░░██████████─██░░██──██░░██─██░░██──██░░██─██░░██──██░░██───██░░██──██░░██───██░░██─────████░░████───────
+─██░░██─────────██░░██──██░░██─██░░██──██░░██─██░░██──██░░██───██░░██──██░░██───██░░██───████░░████─────────
+─██░░██████████─██░░████░░░░██─██░░██████░░██─██░░██████░░████─██░░██████░░██─████░░████─██░░░░████████████─
+─██░░░░░░░░░░██─██░░░░░░░░████─██░░░░░░░░░░██─██░░░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░██─██░░░░░░░░░░░░░░██─
+─██████████████─████████████───██████████████─████████████████─██████████████─██████████─██████████████████─
+────────────────────────────────────────────────────────────────────────────────────────────────────────────
+";
+
+WriteLine(gametitleart);
+
+while (true)
+{
+    WriteLine("\nWelcome to EDUQUIZ!");
+    Write("\nWhat is your name? ");
+    string name = ReadLine();
+    WriteLine("\nWelcome to EDUIQUIZ, " + name + "!");
+    WriteLine("\nThis is a true or false game where you will be displayed ten questions of your chosen topic which will be scored. \nYou will repeat this quiz until you reach a passing grade of at least 50%.");
+    ReadLine();
+
+    Write("\t(1) Chemistry");
+    Write("\t(2) General Knowledge");
+    Write("\t(3) Close Game");
+
+    Write("\n\nInput a number: ");
+    int menu = Convert.ToInt32(ReadLine());
+
+    {
+        if (menu == 1)
+        {
+            Clear();
+            WriteLine("Write 'True' if the statement is true, write 'false' if the statement is false");
+
+            WriteLine("\n\n\nAn example of a homogeneous mixture is alcohol in water.");
+            Write("\nEnter Answer: ");
+            string answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+
+
+            WriteLine("\n\nThe pressure of gas in a container decreases the higher the temperature.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+
+            WriteLine("\n\nPhase change from gas into solid is called sublimation.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nTaste is an extensive property of matter");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nThe neutron was discovered by James Chadwick.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            Clear();
+            WriteLine("The neutron was discovered by James Chadwick.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nThe relative mass of an electron is negligible compared to the relative masses of protons and neutrons.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nAvogrado’s number is 6.022 multiplied by ten to the twenty fourth power.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nAvogrado’s number is used to get the number of atoms in a substance.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            Clear();
+            WriteLine("\n\nPolar Molecules do not have a resultant dipole moment.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\n Hydrogen Bonding is an intramolecular force.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nLondon Dispersion Forces are applicable to all molecules..");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nSaturated solutions contain less solute than it has the capacity to dissolve.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            Clear();
+            WriteLine("\n\nWater can dissolve BOTH polar and nonpolar molecules.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nTemperature does not affect solubility.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nAn example of an Isolated system is a thermos.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+                Clear();
+                WriteLine(endgame);
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+                Clear();
+                WriteLine(endgame);
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+
+        }
+        else if (menu == 2)
+        {
+            Clear();
+            WriteLine("Write 'True' if the statement is true, write 'false' if the statement is false");
+
+            WriteLine("\n\n\n1945 was the year that hitler died.");
+            Write("\nEnter Answer: ");
+            string answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nThe population of California is larger than the population of Canada.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nCows are responsible for more human deaths than shark attacks.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nThe Philippines is an archipelagic country that has the most number of islands.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            Clear();
+            WriteLine("The Mona lisa was stolen from the Louvre Museum in Paris in 1911.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nThe mosquito has a record for killing more people than any other species in written history.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nCinderella was the first disney princess.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nCThe moon is wider than Australia");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            Clear();
+            WriteLine("A lion's roar can be heard from up to five miles away.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nCumulus clouds weigh anywhere from 15 to 30 pounds.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nThe first living animal sent into space was a dog.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nThe United Nations (U.N.) was formed in 1950");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "false")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "true")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            Clear();
+            WriteLine("Both ‘Friends’ and ‘Seinfeld’ finales premiered on Times Square.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+            WriteLine("\n\nBoth ‘Shrek’ and ‘The Dark Knight’ were admitted into the National Film Registry");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+            }
+            WriteLine("\n\nJoan of Arc  was burned at the stake.");
+            Write("\nEnter Answer: ");
+            answer = ReadLine();
+
+            if (answer == "true")
+            {
+                WriteLine("\nThat is correct!");
+                score = score + 10;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+                Clear();
+                WriteLine(endgame);
+            }
+            else if (answer == "false")
+            {
+                WriteLine("\nThat is incorrect!");
+                score = score + 0;
+                ReadLine();
+                WriteLine("Your score is " + score + ".");
+                Clear();
+                WriteLine(endgame);
+            }
+            else
+            {
+                WriteLine("Invalid entry. Please try again.");
+            }
+        }
+        else if (menu == 3)
+        {
+            Console.Clear();
+            WriteLine(endgame);
+            Environment.Exit(0);
+        }
+        else
+        {
+            WriteLine("Choose an option from the above.");
+        }
+    }  
+}
